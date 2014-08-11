@@ -7,7 +7,6 @@ Laravel Debugbar integration plugin for OctoberCMS.
 * `git clone` into */plugins/flynsarmy/debugbar* folder.
 * In */plugins/flynsarmy/debugbar* folder run `composer install`. This will take a while.
 * Log out and back in.
-* Optionally add `'Debugbar' => 'Barryvdh\Debugbar\Facade',` to */app/config/app.php*'s `aliases` array.
 * Optionally update */app/config/packages/barryvdh/laravel-debugbar/config.php*.
 
 ## Usage

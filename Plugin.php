@@ -2,6 +2,7 @@
 
 use App;
 use System\Classes\PluginBase;
+use Illuminate\Foundation\AliasLoader;
 
 /**
  * DebugBar Plugin Information File
@@ -30,6 +31,12 @@ class Plugin extends PluginBase
     public function boot()
     {
         App::register('\Barryvdh\Debugbar\ServiceProvider');
+
+        /*
+         * Register aliases
+         */
+        $alias = AliasLoader::getInstance();
+        $alias->alias('Debugbar', 'Barryvdh\Debugbar\Facade');
     }
 
     public function register()
