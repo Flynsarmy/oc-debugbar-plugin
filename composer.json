@@ -1,0 +1,16 @@
+{
+    "name": "flynsarmy/debugbar",
+    "description": "Laravel Debugbar integration plugin for OctoberCMS",
+    "homepage": "http://www.flynsarmy.com",
+    "keywords": ["october", "cms", "flynsarmy", "laravel", "debugbar"],
+    "authors": [
+        {
+            "name": "Flyn San",
+            "email": "flynsarmy@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "barryvdh/laravel-debugbar": "1.*"
+    }
+}
