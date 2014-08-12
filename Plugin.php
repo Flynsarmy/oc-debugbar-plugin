@@ -3,6 +3,7 @@
 use App;
 use System\Classes\PluginBase;
 use Illuminate\Foundation\AliasLoader;
+use Event;
 
 /**
  * DebugBar Plugin Information File
@@ -30,13 +31,19 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
+        // Register ServiceProviders
         App::register('\Barryvdh\Debugbar\ServiceProvider');
 
-        /*
-         * Register aliases
-         */
+        // Register aliases
         $alias = AliasLoader::getInstance();
         $alias->alias('Debugbar', 'Barryvdh\Debugbar\Facade');
+
+        // Register Twig extensions
+        Event::listen('cms.page.beforeDisplay', function($controller, $url, $page) {
+            $twig = $controller->getTwig();
+            $twig->addExtension(new \Barryvdh\Debugbar\Twig\Extension\Debug($this->app));
+            $twig->addExtension(new \Barryvdh\Debugbar\Twig\Extension\Stopwatch($this->app));
+        });
     }
 
     public function register()
