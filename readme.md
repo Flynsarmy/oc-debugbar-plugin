@@ -11,7 +11,10 @@ Laravel Debugbar integration plugin for OctoberCMS.
 
 ## Usage
 
-See the [laravel-debugbar documentation](https://github.com/barryvdh/laravel-debugbar) for usage instructions.
+* Set *app/config/app.php* `debug` line to true.
+* Add `dump(some_var)` to your twig code.
+
+See the [laravel-debugbar documentation](https://github.com/barryvdh/laravel-debugbar) for more usage information.
 
 ## Licence
 
